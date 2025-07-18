@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: winter --default, night --prefersdark;
+}
 
 :root {
   --background: #ffffff;
@@ -14,8 +17,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
+    --foreground: #0a0a0a;
   }
 }
 
@@ -25,3 +29,5 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 1rem;
 }
+
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
